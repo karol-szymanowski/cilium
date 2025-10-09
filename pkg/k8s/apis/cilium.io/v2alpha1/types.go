@@ -44,9 +44,8 @@ type CoreCiliumEndpoint struct {
 }
 
 // +genclient
-// +genclient:nonNamespaced
 // +k8s:deepcopy-gen:interfaces=k8s.io/apimachinery/pkg/runtime.Object
-// +kubebuilder:resource:categories={cilium},singular="ciliumendpointslice",path="ciliumendpointslices",scope="Cluster",shortName={ces}
+// +kubebuilder:resource:categories={cilium},singular="ciliumendpointslice",path="ciliumendpointslices",scope="Namespaced",shortName={ces}
 // +kubebuilder:storageversion
 
 // CiliumEndpointSlice contains a group of CoreCiliumendpoints.
