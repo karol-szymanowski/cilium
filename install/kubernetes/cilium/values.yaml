@@ -2843,6 +2843,7 @@ policyDenyResponse: none
 MTU: 0
 # -- Disable the usage of CiliumEndpoint CRD.
 disableEndpointCRD: false
+disableNodeCRD: false
 wellKnownIdentities:
   # -- Enable the use of well-known identities.
   enabled: false

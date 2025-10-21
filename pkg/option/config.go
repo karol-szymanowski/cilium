@@ -817,6 +817,10 @@ const (
 	// CiliumNode resource for the local node
 	AutoCreateCiliumNodeResource = "auto-create-cilium-node-resource"
 
+	// DisableCiliumNodeWatcher disables the CiliumNode watcher.
+	// This is intended for use cases where CiliumNode updates are not needed.
+	DisableCiliumNodeCRD = "disable-cilium-node-crd"
+
 	// ExcludeNodeLabelPatterns allows for excluding unnecessary labels from being propagated from k8s node to cilium
 	// node object. This allows for avoiding unnecessary events being broadcast to all nodes in the cluster.
 	ExcludeNodeLabelPatterns = "exclude-node-label-patterns"
@@ -1662,6 +1666,9 @@ type DaemonConfig struct {
 	// CiliumNode resource for the local node
 	AutoCreateCiliumNodeResource bool
 
+	// DisableCiliumNodeCRD disables the CiliumNode use.
+	DisableCiliumNodeCRD bool
+
 	// ExcludeNodeLabelPatterns allows for excluding unnecessary labels from being propagated from k8s node to cilium
 	// node object. This allows for avoiding unnecessary events being broadcast to all nodes in the cluster.
 	ExcludeNodeLabelPatterns []*regexp.Regexp
@@ -1910,6 +1917,7 @@ var (
 		EnableEndpointRoutes:            defaults.EnableEndpointRoutes,
 		AnnotateK8sNode:                 defaults.AnnotateK8sNode,
 		AutoCreateCiliumNodeResource:    defaults.AutoCreateCiliumNodeResource,
+		DisableCiliumNodeCRD:            false,
 		IdentityAllocationMode:          IdentityAllocationModeKVstore,
 		AllowICMPFragNeeded:             defaults.AllowICMPFragNeeded,
 		AllocatorListTimeout:            defaults.AllocatorListTimeout,
